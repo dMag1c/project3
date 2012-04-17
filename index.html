@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="themes/foodtheme.min.css" />
         <link rel="stylesheet" href="css/styles.css" />
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile.structure-1.0.1.min.css" />
+        <script type="text/javascript" src="js/a3.js"></script>
 		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -55,11 +56,15 @@
 			</div>
 			<div data-role="content" data-theme="a">
 				<p></p>
-                <form action="maps.php" method="get">
-                	<input type="search" name="query" placeholder="Freak'n Search" /><!--data-ajax="false"-->
+                <form action="#">
+                	<input type="search" name="find" placeholder="Freak'n Search" />
+                    <input type="button" value="Search" onclick="sendRequest(this.form.elements['find'].value)" />
+                    <!--data-ajax="false"method="get"-->
                  </form>
                 <div id="map_canvas" style="width:300px; height:200px"></div>
-				<p><img src="images/burger.jpg" /> </p>
+				<div id="view">
+                	<p><img src="images/burger.jpg" /></p>
+                </div>
 				<p>CHOOSE A TYPE OF RESTAURANT TO FREAKIN EAT AT YO</p>
 				<p><a href="index.html" data-role="button" data-inline="false" data-mini="true" data-icon="arrow-r" data-iconpos="right" >TELL ME WHERE TO EAT</a></p>
 				
