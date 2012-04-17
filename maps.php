@@ -16,7 +16,7 @@
 		$url  = "https://maps.googleapis.com/maps/api/place/search/xml?";
 		$url .= "location=28.600479,-81.2013"; 
 		$url .= "&rankby=distance";
-		$url .= "&type=food";/*|cafe|restaurant*/
+		$url .= "&type=food|cafe|restaurant";
 		$url .= "&keyword=$action";
 		$url .= "&sensor=false";
 		$url .= "&key=$apiKey";
@@ -45,7 +45,12 @@
 			print "No Response Found";
 		}
 		else{
-			print "<pre>".htmlentities($xmlObject->asXML())."</pre>";
+			//print "<pre>".htmlentities($xmlObject->asXML())."</pre>";
+			print "<ul>";
+			foreach($xmlObject->result as $reply){
+				print "<li>".$reply->name."</li>";	
+			}
+			print "</ul>";
 		}
 
 ?>
